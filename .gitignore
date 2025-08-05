@@ -13,6 +13,7 @@
 ## Build generated
 build/
 DerivedData/
+fastlane/derived_data
 
 ## Various settings
 ExportOptions.plist
