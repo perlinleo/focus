@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +36,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C03D339B2E40B76D00EFBDA8 /* focus */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = focus;
-			sourceTree = "<group>";
-		};
-		C03D33A92E40B76F00EFBDA8 /* focusTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = focusTests;
-			sourceTree = "<group>";
-		};
-		C03D33B32E40B76F00EFBDA8 /* focusUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = focusUITests;
-			sourceTree = "<group>";
-		};
+		C03D339B2E40B76D00EFBDA8 /* focus */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focus; sourceTree = "<group>"; };
+		C03D33A92E40B76F00EFBDA8 /* focusTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focusTests; sourceTree = "<group>"; };
+		C03D33B32E40B76F00EFBDA8 /* focusUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focusUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +195,7 @@
 				};
 			};
 			buildConfigurationList = C03D33942E40B76D00EFBDA8 /* Build configuration list for PBXProject "focus" */;
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -215,7 +204,6 @@
 			);
 			mainGroup = C03D33902E40B76D00EFBDA8;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C03D339A2E40B76D00EFBDA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
