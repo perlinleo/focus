@@ -16,17 +16,54 @@
 default_platform(:ios)
 
 platform :ios do
-  lane :test do
-      scan()
+  lane :ui_test do
+    scan(
+        testplan: "focusUITests",
+        code_coverage: true,
+        output_directory: "./fastlane/test_output",
+        derived_data_path: "./fastlane/derived_data"
+    )
+  end
+
+  lane :unit_test do
+    scan(
+        testplan: "focusTests",
+        code_coverage: true,
+        output_directory: "./fastlane/test_output",
+        derived_data_path: "./fastlane/derived_data"
+    )
+  end
+  
+  lane :coverage do
+    slather(
+      proj: "focus.xcodeproj",
+      scheme: "focus",
+      output_directory: "code_coverage",
+      cobertura_xml: true
+    )
+
+    codecov_token = ENV['CODECOV_TOKEN']
+    unless codecov_token
+        UI.user_error!("Missing CODECOV_TOKEN environment variable!")
+    end
+    
+    sh "curl -s https://codecov.io/bash > codecov.sh"
+    sh "bash codecov.sh -J '^focus$' -t #{codecov_token}"
+  end
+  
+  lane :ci_test do
+    ui_test
+    unit_test
+    upload_coverage
   end
   
   lane :register_app do
-      produce(
-              username: "perlinleo@gmail.com",
-              app_identifier: "ru.leonidperlin.focus",
-              app_name: "ConcreteFocus",
-              team_name: "Leonid Perlin",
-              itc_team_name: "Leonid Perlin"
+    produce(
+        username: "perlinleo@gmail.com",
+        app_identifier: "ru.leonidperlin.focus",
+        app_name: "ConcreteFocus",
+        team_name: "Leonid Perlin",
+        itc_team_name: "Leonid Perlin"
     )
   end
   
@@ -45,27 +82,27 @@ platform :ios do
   end
   
   lane :sync_all_development do
-      sync_device_info
-      match(
-            type: "development",
-            username: "perlinleo@gmail.com",
-            app_identifier: "ru.leonidperlin.focus"
+    sync_device_info
+    match(
+        type: "development",
+        username: "perlinleo@gmail.com",
+        app_identifier: "ru.leonidperlin.focus"
     )
   end
   
   lane :sync_device_info do
-        register_devices(
-            username: "perlinleo@gmail.com",
-            devices: {
-                "iPhne" => "00008120-001A189E11B8C01E"
-            }
-        )
+    register_devices(
+        username: "perlinleo@gmail.com",
+        devices: {
+            "iPhne" => "00008120-001A189E11B8C01E"
+        }
+    )
   end
   
   lane :beta do
       match(type: "appstore",
-            username: "perlinleo@gmail.com",
-            app_identifier: "ru.leonidperlin.focus"
+        username: "perlinleo@gmail.com",
+        app_identifier: "ru.leonidperlin.focus"
       )
       increment_build_number()
       gym(scheme: "focus")

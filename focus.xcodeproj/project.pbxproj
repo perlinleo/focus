@@ -35,9 +35,19 @@
 		C03D33CB2E40F2D200EFBDA8 /* Scanfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Scanfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C03F1B522E4217F8004D0EB4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				focusTests.xctestplan,
+			);
+			target = C03D33A52E40B76F00EFBDA8 /* focusTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C03D339B2E40B76D00EFBDA8 /* focus */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focus; sourceTree = "<group>"; };
-		C03D33A92E40B76F00EFBDA8 /* focusTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focusTests; sourceTree = "<group>"; };
+		C03D33A92E40B76F00EFBDA8 /* focusTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C03F1B522E4217F8004D0EB4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = focusTests; sourceTree = "<group>"; };
 		C03D33B32E40B76F00EFBDA8 /* focusUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = focusUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 

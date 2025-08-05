@@ -13,5 +13,11 @@ jobs:
       - name: Select Xcode 16.2
         run: sudo xcode-select -switch /Applications/Xcode_16.2.app
 
-      - name: Fastlane tests
-        run: fastlane test
+      - name: Unit tests
+        run: fastlane unit_test
+
+      - name: UI tests
+        run: fastlane ui_test
+      
+      - name: Code coverage
+        run: fastlane coverage

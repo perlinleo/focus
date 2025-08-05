@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E633F80B-4F5E-48F9-9324-50414B7FF635",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:focus.xcodeproj",
+        "identifier" : "C03D33A52E40B76F00EFBDA8",
+        "name" : "focusTests"
+      }
+    }
+  ],
+  "version" : 1
+}

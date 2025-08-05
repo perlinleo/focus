@@ -38,4 +38,16 @@ final class focusUITests: XCTestCase {
             XCUIApplication().launch()
         }
     }
+    
+    @MainActor
+    func testStartFocus() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.activate()
+        
+        app.buttons["Start Focus"].tap()
+        
+        XCTAssertFalse(app.staticTexts["Timer is Idle"].exists)
+        XCTAssertTrue(app.staticTexts["Focus time"].exists)
+    }
 }

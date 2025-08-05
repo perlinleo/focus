@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "9588EABC-4166-40BD-AD20-417614F39B39",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:focus.xcodeproj",
+        "identifier" : "C03D33AF2E40B76F00EFBDA8",
+        "name" : "focusUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
