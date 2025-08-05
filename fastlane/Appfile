@@ -1,0 +1,13 @@
+app_identifier("ru.leonidperlin.focus") # The bundle identifier of your app
+apple_id("perlinleo@gmail.com") # Your Apple Developer Portal username
+username("perlinleo@gmail.com")
+
+itc_team_id("125892249") # App Store Connect Team ID
+team_id("KD82SC4QSX") # Developer Portal Team ID
+
+team_name("Leonid Perlin")
+#itc_team_name(team_name)
+
+app_name("ConcreteFocus")
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

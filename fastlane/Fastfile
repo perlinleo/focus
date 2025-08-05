@@ -1,0 +1,81 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  lane :tests do
+      scan()
+  end
+  
+  lane :register_app do
+      produce(
+              username: "perlinleo@gmail.com",
+              app_identifier: "ru.leonidperlin.focus",
+              app_name: "ConcreteFocus",
+              team_name: "Leonid Perlin",
+              itc_team_name: "Leonid Perlin"
+    )
+  end
+  
+  lane :get_dev_certs do
+    cert(
+        username: "perlinleo@gmail.com",
+        team_name: "Leonid Perlin",
+        development: true
+    )
+    sigh(
+         username: "perlinleo@gmail.com",
+         team_name: "Leonid Perlin",
+         app_identifier: "ru.leonidperlin.focus",
+         development: true
+    )
+  end
+  
+  lane :sync_all_development do
+      sync_device_info
+      match(
+            type: "development",
+            username: "perlinleo@gmail.com",
+            app_identifier: "ru.leonidperlin.focus"
+    )
+  end
+  
+  lane :sync_device_info do
+        register_devices(
+            username: "perlinleo@gmail.com",
+            devices: {
+                "iPhne" => "00008120-001A189E11B8C01E"
+            }
+        )
+  end
+  
+  lane :beta do
+      match(type: "appstore",
+            username: "perlinleo@gmail.com",
+            app_identifier: "ru.leonidperlin.focus"
+      )
+      increment_build_number()
+      gym(scheme: "focus")
+      app_store_connect_api_key(
+            key_id: "W2SJ52Q32L",
+            issuer_id: "0cee7c77-10e7-4094-91b6-71903b691257",
+            key_filepath: "AuthKey_W2SJ52Q32L.p8"
+      )
+      upload_to_testflight(
+            username: "perlinleo@gmail.com"
+      )
+  end
+end
