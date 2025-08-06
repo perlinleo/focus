@@ -94,3 +94,8 @@ fastlane/*.env
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+
+codecov.sh
+focus.app.coverage.txt
+xcov_output/

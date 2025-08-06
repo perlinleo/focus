@@ -34,15 +34,16 @@ platform :ios do
     )
   end
   
-  lane :coverage do
-    slather(
-      proj: "focus.xcodeproj",
-      scheme: "focus",
-      output_directory: "code_coverage",
-      cobertura_xml: true
-    )
-
-    codecov_token = ENV['CODECOV_TOKEN']
+  lane :generate_coverage_report do
+      slather(
+        proj: "focus.xcodeproj",
+        scheme: "focus",
+        output_directory: "code_coverage",
+        cobertura_xml: true
+      )
+  end
+  
+  lane :upload_coverage do
     unless codecov_token
         UI.user_error!("Missing CODECOV_TOKEN environment variable!")
     end
