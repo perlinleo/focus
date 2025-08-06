@@ -39,7 +39,8 @@ platform :ios do
         proj: "focus.xcodeproj",
         scheme: "focus",
         output_directory: "code_coverage",
-        cobertura_xml: true
+        cobertura_xml: true,
+        build_directory: "./fastlane/derived_data"
       )
   end
   

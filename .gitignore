@@ -99,3 +99,4 @@ iOSInjectionProject/
 codecov.sh
 focus.app.coverage.txt
 xcov_output/
+code_coverage/

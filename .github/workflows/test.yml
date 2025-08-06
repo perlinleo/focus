@@ -19,5 +19,8 @@ jobs:
       - name: UI tests
         run: fastlane ui_test
       
-      - name: Code coverage
-        run: fastlane coverage
+      - name: Code coverage report
+        run: fastlane generate_coverage_report
+      
+      - name: Upload to CodeCov
+        run: fastlane upload_coverage

@@ -39,10 +39,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
-### ios coverage
+### ios upload_coverage
 
 ```sh
-[bundle exec] fastlane ios coverage
+[bundle exec] fastlane ios upload_coverage
 ```
 
 
