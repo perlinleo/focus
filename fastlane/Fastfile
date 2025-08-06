@@ -45,6 +45,7 @@ platform :ios do
   end
   
   lane :upload_coverage do
+    codecov_token = ENV['CODECOV_TOKEN']
     unless codecov_token
         UI.user_error!("Missing CODECOV_TOKEN environment variable!")
     end
